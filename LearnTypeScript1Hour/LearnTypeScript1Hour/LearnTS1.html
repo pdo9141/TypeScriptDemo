@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script src="systemjs/dist/system.js"></script>
+    <script>
+        System.config({
+            "defaultJSExtensions": true
+        });
+        System.import("Customer.js").
+            then(function (exports) {
+                var cust = new exports.Customer();
+                cust.addressObj.Street1 = "123 Test Ave."
+                cust.CustomerName = "Phillip";
+                cust.Validate(9);
+            });
+
+        //try {
+        //    var cust = new Customer();
+        //    cust.CustomerName = "";
+        //    cust.Validate(9);
+        //}
+        //catch (ex) {
+        //    alert(ex);
+        //}
+
+        //var newCust = new SomeOtherCustomer();
+        //newCust.CustomerName = "ia";
+        //newCust.addressObj.Street1 = "123 Test Ave."
+        //newCust.Validate(9);
+    </script>
+</body>
+</html>
